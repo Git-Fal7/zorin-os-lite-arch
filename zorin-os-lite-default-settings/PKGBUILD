@@ -1,0 +1,15 @@
+pkgname=zorin-os-lite-default-settings
+pkgver=16.1.4
+_ver="_$pkgver"
+pkgrel=3
+epoch=0
+pkgdesc="default settings for zorin os lite"
+arch=('any')
+url="https://zorin.com/os/"
+source=("http://ppa.launchpad.net/zorinos/stable/ubuntu/pool/main/z/zorin-os-lite-defautl-settings/$pkgname$_ver.tar.xz")
+sha256sums=('0B70768FEE002C356DE09216392419172F16B51759D4E0D652F37EE9917416D2')
+
+package() {
+  cd "$pkgname"
+  make install
+}
