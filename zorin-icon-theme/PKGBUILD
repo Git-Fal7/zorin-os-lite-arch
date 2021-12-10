@@ -6,11 +6,11 @@ epoch=0
 pkgdesc="A bunch of icon themes in Zorin OS"
 arch=('any')
 url="https://zorin.com/os/"
-source=("http://ppa.launchpad.net/zorinos/stable/ubuntu/pool/main/z/zorin-icon-themes/$pkgname$_ver.tar.xz")
+source=("http://ppa.launchpad.net/zorinos/stable/ubuntu/pool/main/z/zorin-icon-themes/$pkgname$_ver.tar.gz")
 sha256sums=('CC191BA547E56323CEC52756CF861D4D1BD0EB12C850DDD7A583B44796F30A91')
 
 package() {
-	cd "$pkgname"
+  cd "$pkgname"
   rm -rf debian/
   rm -rf README.md
   rm -rf LICENSE
