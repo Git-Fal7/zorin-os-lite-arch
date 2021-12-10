@@ -1,0 +1,18 @@
+pkgname=zorin-desktop-themes
+pkgver=3.4.2
+_ver="_$pkgver"
+pkgrel=3
+epoch=0
+pkgdesc="A bunch of desktop themes in Zorin OS"
+arch=('any')
+url="https://zorin.com/os/"
+source=("http://ppa.launchpad.net/zorinos/stable/ubuntu/pool/main/z/zorin-desktop-themes/$pkgname$_ver.tar.xz")
+sha256sums=('1FF39FDEE14579CB2A87F28CB6329CDB9B7642E7BA3D4EC3FF30E64914B8D4E3')
+
+package() {
+  cd "$pkgname"
+  rm -rf debian/
+  rm -rf README.md
+  rm -rf LICENSE
+  sudo cp -r ./* /usr/share/icons/
+}
