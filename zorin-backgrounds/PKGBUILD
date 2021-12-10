@@ -1,1 +1,19 @@
+pkgname=zorin-os-wallpapers
+pkgver=16.2
+_ver="_$pkgver"
+pkgrel=3
+epoch=0
+pkgdesc="wallpapers for zorin os"
+arch=('any')
+url="https://zorin.com/os/"
+source=("http://ppa.launchpad.net/zorinos/stable/ubuntu/pool/main/z/zorin-os-wallpapers/$pkgname$_ver.tar.xz")
+sha256sums=('A082EF945EF517E0239779E44F2C8C67D8231B9F3E8D429C36F43B9017173658')
 
+package() {
+  cd "$pkgname"
+  sudo cp *.jpg /usr/share/backgrounds/
+  sudo cp *.png /usr/share/backgrounds/
+  sudo cp -r zorin-mountain/ /usr/share/backgrounds/
+  sudo cp -r zorin-blur/ /usr/share/backgrounds/
+  sudo cp *.xml /usr/share/gnome-background-properties/
+}
