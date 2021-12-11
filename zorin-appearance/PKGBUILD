@@ -9,7 +9,12 @@ url="https://zorin.com/os/"
 source=("http://ppa.launchpad.net/zorinos/stable/ubuntu/pool/main/z/$pkgname/$pkgname$_ver.tar.xz")
 sha256sums=('4D1FE079BD1E55201240B6D876AE94F6AB11383F158064B2710096E81ADEDBCB')
 
+build() {
+  cd "$pkgname"
+  python3 setup.py build
+}
+
 package() {
   cd "$pkgname"
-  python3 ./setup.py
+  python3 ./setup.py install
 }
