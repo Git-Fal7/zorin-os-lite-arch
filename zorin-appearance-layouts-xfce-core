@@ -1,0 +1,15 @@
+pkgname=zorin-appearance-layouts-xfce-core
+pkgver=1.2.4
+_ver="_$pkgver"
+pkgrel=3
+epoch=0
+pkgdesc="zorin appearance"
+arch=('any')
+url="https://zorin.com/os/"
+source=("http://ppa.launchpad.net/zorinos/stable/ubuntu/pool/main/z/$pkgname/$pkgname$_ver.tar.gz")
+sha256sums=('EB83A7EEE2823E3D912BBAC3EE967B15D74788F3077CB1604663DE45772D20E6')
+
+package() {
+  cd "$pkgname"
+  sudo cp Layouts/* /usr/share/zorin-appearance/layout/
+}
