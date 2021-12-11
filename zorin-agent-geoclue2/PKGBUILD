@@ -11,5 +11,8 @@ sha256sums=('91CE8A17CE834A11F9B5BC397C8BD82F0685A8A6E984ABC442B14EB64E527490')
 
 package() {
   cd "$pkgname"
-  ninja -prefix=/usr/ -libexecdir=/usr/lib/ install
+  meson ./build/ --prefix=/usr --libexecdir=lib
+  cd ./build/
+  ninja
+  ninja install
 }
