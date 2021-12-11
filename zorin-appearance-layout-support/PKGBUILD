@@ -1,0 +1,15 @@
+pkgname=zorin-appearance-layouts-support
+pkgver=3.3.2
+_ver="_$pkgver"
+pkgrel=3
+epoch=0
+pkgdesc="zorin appearance"
+arch=('any')
+url="https://zorin.com/os/"
+source=("http://ppa.launchpad.net/zorinos/stable/ubuntu/pool/main/z/$pkgname/$pkgname$_ver.tar.gz")
+sha256sums=('CE0B6F72CF34A64795D16ECAD94CE6E8A0E173C51708D055B4384915F3F9E42C')
+
+package() {
+  cd "$pkgname"
+  sudo cp Layouts/* /usr/share/zorin-appearance/layout
+}
