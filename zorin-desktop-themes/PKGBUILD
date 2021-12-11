@@ -14,5 +14,5 @@ package() {
   rm -rf debian/
   rm -rf README.md
   rm -rf LICENSE
-  sudo cp -r ./* /usr/share/icons/
+  sudo cp -r ./* /usr/share/themes/
 }
