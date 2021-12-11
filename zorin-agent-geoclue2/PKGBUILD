@@ -1,0 +1,15 @@
+pkgname=zorin-agent-geoclue2
+pkgver=1.0.3
+_ver="_$pkgver"
+pkgrel=3
+epoch=0
+pkgdesc="zorin appearance"
+arch=('any')
+url="https://zorin.com/os/"
+source=("http://ppa.launchpad.net/zorinos/stable/ubuntu/pool/main/z/$pkgname/$pkgname$_ver.tar.xz")
+sha256sums=('91CE8A17CE834A11F9B5BC397C8BD82F0685A8A6E984ABC442B14EB64E527490')
+
+package() {
+  cd "$pkgname"
+  ninja -prefix=/usr/ -libexecdir=/usr/lib/ install
+}
