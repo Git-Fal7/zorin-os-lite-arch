@@ -6,7 +6,7 @@ epoch=0
 pkgdesc="zorin appearance"
 arch=('any')
 url="https://zorin.com/os/"
-source=("http://ppa.launchpad.net/zorinos/stable/ubuntu/pool/main/z/$pkgname/$pkgname$_ver_all.deb")
+source=("http://ppa.launchpad.net/zorinos/stable/ubuntu/pool/main/z/$pkgname/$pkgname${_ver}_all.deb")
 sha256sums=('6790E9409FB510A8C09D79232A3A2032040088B872DFF32506AC8A40A81CF788')
 
 prepare(){
