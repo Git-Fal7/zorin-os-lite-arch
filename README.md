@@ -5,3 +5,5 @@ a script that tries to get the feel of zorin os lite in arch
 zorin-exec-guard
 zorin-connect
 and some programs that are zorin os only
+# zorin-appearance
+zorin-appearance is at a weird state, some files aren't avaliable in the original files.
