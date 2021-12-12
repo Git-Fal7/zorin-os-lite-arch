@@ -1,0 +1,22 @@
+pkgname=zorin-appearance
+pkgver=4.1.9
+_ver="_$pkgver"
+pkgrel=3
+epoch=0
+pkgdesc="zorin appearance"
+arch=('any')
+url="https://zorin.com/os/"
+source=("http://ppa.launchpad.net/zorinos/stable/ubuntu/pool/main/z/$pkgname/$pkgname$_ver_all.deb")
+sha256sums=('6790E9409FB510A8C09D79232A3A2032040088B872DFF32506AC8A40A81CF788')
+
+prepare(){
+    while read -r pkg; do
+        dir="${srcdir}/$(basename "${pkg}" | cut -d "." -f 1)"
+        mkdir -p "${dir}"
+        tar -x -v -f "${pkg}" -C "${dir}"
+    done < <(find "${srcdir}" -maxdepth 1 -mindepth 1 -name "*.tar*" -printf "%p\n")
+}
+
+package() {
+    cp -rv "${srcdir}/data/"* "${pkgdir}"
+}
