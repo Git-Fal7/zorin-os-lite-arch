@@ -1,32 +1,37 @@
 #!/bin/sh
 
-DIRNAME=${pwd}
+HOMEDIR=${pwd}
 
 echo "upgrading stuff"
 
 sudo pacman -Syu
 
-sudo pacman -S xfce lightdm lightdm-gtk-greeter
+sudo pacman -S xfce4 xorg-server xorg-drivers lightdm lightdm-gtk-greeter
 
 yay -S xfce4-zorinmenulite-plugin
 
-cd ${DIRNAME}
+cd ${HOMEDIR}
 
 cd zorin-icon-theme/
 makepkg -si
 
-cd ..
+cd ${HOMEDIR}
 
 cd zorin-desktop-themes/
 makepkg -si
 
-cd ..
+cd ${HOMEDIR}
 
 cd zorin-backgrounds/
 makepkg -si
 
-cp -r xfce4/ ~/.config/
+cd ${HOMEDIR}
+cd zorin-os-lite-default-settings/
+makepkg -si
 
-sudo cp lightdm-gtk-greeter.conf /etc/lightdm/
+cp -r /etc/xdg/xdg-zorin-os-lite/* ~/.config/
+cp /etc/xd/xdg-zorin-os-lite/* ~/.config/
+
+sudo systemctl enable lightdm
 
 echo "all is good, should be finished"
