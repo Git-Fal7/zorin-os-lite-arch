@@ -26,8 +26,10 @@ cd ..
 cd zorin-os-lite-default-settings/
 makepkg -si
 
+mkdir ~/.config/
+
 cp -r /etc/xdg/xdg-zorin-os-lite/* ~/.config/
-cp /etc/xd/xdg-zorin-os-lite/* ~/.config/
+cp /etc/xdg/xdg-zorin-os-lite/* ~/.config/
 
 sudo systemctl enable lightdm
 
