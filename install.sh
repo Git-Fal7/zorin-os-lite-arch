@@ -9,9 +9,9 @@ cd yay/
 makepkg -si
 
 cd ..
-
-sudo pacman -S xfce4 xorg-server xorg-drivers lightdm lightdm-gtk-greeter inter-font noto-fonts xfce4-power-manager network-manager-applet pulseaudio gvfs xfce4-pulseaudio-plugin
-
+if [ "$1" != "-nosystemd" ]; then
+ sudo pacman -S xfce4 xorg-server xorg-drivers lightdm lightdm-gtk-greeter inter-font noto-fonts xfce4-power-manager network-manager-applet pulseaudio gvfs xfce4-pulseaudio-plugin
+fi
 yay -S xfce4-zorinmenulite-plugin xfce4-docklike-plugin
 
 cd zorin-icon-theme/
@@ -37,6 +37,7 @@ mkdir ~/.config/
 cp -r /etc/xdg/xdg-zorin-os-lite/* ~/.config/
 cp /etc/xdg/xdg-zorin-os-lite/* ~/.config/
 
-sudo systemctl enable lightdm
-
+if [ "$1" != "-nosystemd" ]; then
+ sudo systemctl enable lightdm
+fi
 echo "all is good, should be finished"
