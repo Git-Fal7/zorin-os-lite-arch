@@ -24,5 +24,5 @@ zorin-appearance is at a weird state, some files aren't avaliable in the origina
 # zorin menu
 here some items that are grayed in the menu:
 username (mugshot)
-software (gnome-software (i guess we can use pamac and link it))
+software (gnome-software (i guess link pamac as gnome-software))
 appearance (zorin-appearance, this option will be grayed untill there is a patch for the original code)
