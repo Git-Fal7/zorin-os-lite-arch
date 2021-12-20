@@ -14,7 +14,7 @@ yay -S xfce4-zorinmenulite-plugin xfce4-docklike-plugin
 
 if [ "$1" = "-full" ]; then
  yay -S mugshot pamac-nosnap
- sudo ln -s /usr/bin/pamac /usr/bin/gnome-store
+ sudo ln -s /usr/bin/pamac-manager /usr/bin/gnome-store
  sudo ln -s /usr/bin/xfce4-appearance-settings /usr/bin/zorin-appearance
 fi
 
