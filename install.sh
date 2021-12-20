@@ -14,6 +14,12 @@ if [ "$1" != "-nosystemd" ]; then
 fi
 yay -S xfce4-zorinmenulite-plugin xfce4-docklike-plugin
 
+if [ "$1" = "-full" ]; then
+ yay -S mugshot pamac-nosnap
+ ln -s /usr/bin/pamac /usr/bin/gnome-store
+ ln -s /usr/bin/xfce4-appearance-settings /usr/bin/zorin-appearance
+fi
+
 cd zorin-icon-theme/
 makepkg -si
 
